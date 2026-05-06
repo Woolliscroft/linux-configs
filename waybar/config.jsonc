@@ -10,7 +10,6 @@
         "hyprland/workspaces"
     ],
     "modules-center": [
-        "hyprland/window"
     ],
     "modules-right": [
         "tray",
@@ -30,7 +29,11 @@
         "all-outputs": true,
         "on-click": "activate",
         "persistent_workspaces": {
-            "1": []
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": []
         }
     },
     "custom/weather": {
@@ -104,3 +107,4 @@
         "tooltip": false
     }
 }
+

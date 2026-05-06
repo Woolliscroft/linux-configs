@@ -1,0 +1,20 @@
+/* snowboard.css — frosty, desaturated, pulled from the wallpaper */
+@define-color bg0     #0C1520;   /* dark sky — main background */
+@define-color bg1     #111C2A;   /* slightly lighter surface */
+@define-color bg2     #172437;   /* raised surfaces */
+@define-color bg3     #1E2F42;   /* hover / selection */
+@define-color bg4     #253D52;   /* borders */
+
+@define-color red     #c47d6e;   /* muted, for urgency only */
+@define-color orange  #b88a5a;
+@define-color yellow  #c9aa6a;
+@define-color green   #7aa368;
+@define-color aqua    #5C8FAA;   /* desaturated frost — primary accent */
+@define-color blue    #8DAFC4;   /* muted snow blue — text/icons */
+@define-color purple  #7A9DB3;   /* cold sky */
+
+@define-color fg      #C8D8E4;   /* off-white, not pure snow */
+
+@define-color grey0   #2E4458;
+@define-color grey1   #4A6878;
+@define-color grey2   #6E8EA0;

@@ -1,175 +1,111 @@
+@import "snowboard.css";
+
 * {
   border: none;
   border-radius: 0;
   font-family: JetBrainsMono Nerd Font, JetBrains Mono Nerd Font, monospace;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 13px;
   min-height: 0;
 }
 
 window#waybar {
-  background: rgba(21, 18, 27, 0);
-  color: #cdd6f4;
+  background: transparent;
+  color: rgba(200, 216, 228, 0.75);
 }
 
 tooltip {
-  background: #1e1e2e;
-  border-radius: 10px;
-  border: 2px solid #11111b;
-}
-
-#workspaces button {
-  padding: 5px;
-  color: #313244;
-  margin-right: 5px;
-}
-
-#workspaces button.active {
-  color: #a6adc8;
-}
-
-#workspaces button.focused {
-  color: #a6adc8;
-  background: #eba0ac;
-  border-radius: 10px;
-}
-
-#workspaces button.urgent {
-  color: #11111b;
-  background: #a6e3a1;
-  border-radius: 10px;
-}
-
-#workspaces button:hover {
-  background: #11111b;
-  color: #cdd6f4;
-  border-radius: 10px;
-}
-
-tooltip {
-  background-color: transparent;
-  border: none;
+  background: rgba(12, 21, 32, 0.85);
+  border-radius: 8px;
+  border: 1px solid rgba(93, 143, 170, 0.25);
 }
 
 tooltip label {
-  background-color: #1e1e2e;
-  color: #cdd6f4;
-  border-radius: 10px;
-  border: 2px solid #11111b;
+  background: transparent;
+  color: @fg;
   padding: 4px 8px;
 }
 
-#language,
-#custom-updates,
-#custom-caffeine,
-#custom-weather,
-#window {
-  border-radius: 10px;
-  margin-left: 10px;
-  margin-right: 10px;
-  padding-left: 8px;
-  padding-right: 8px;
+/* ── Workspaces ────────────────────────────────── */
+
+#workspaces {
+  background: transparent;
+  margin: 3px 0 3px 10px;
+  padding-left: 2px;
 }
+
+#workspaces button {
+  padding: 4px 8px;
+  color: rgba(110, 142, 160, 0.5);
+  margin-right: 2px;
+  background: transparent;
+  border-bottom: 2px solid transparent;
+}
+
+#workspaces button.active,
+#workspaces button.focused {
+  color: rgba(200, 216, 228, 0.9);
+  background: transparent;
+  border-bottom: 2px solid rgba(93, 143, 170, 0.8);
+}
+
+#workspaces button.urgent {
+  color: rgba(196, 125, 110, 0.9);
+  border-bottom: 2px solid rgba(196, 125, 110, 0.8);
+}
+
+#workspaces button:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(200, 216, 228, 0.8);
+}
+
+/* ── All right-side modules — ghost treatment ── */
 
 #clock,
 #custom-battery,
 #pulseaudio,
-#workspaces,
 #tray,
 #backlight,
 #custom-power-profile,
-#custom-network-toggle {
-  background: #1e1e2e;
-  padding: 0 10px;
+#custom-network-toggle,
+#custom-updates {
+  background: transparent;
+  padding: 0 8px;
   margin: 3px 0;
-  border: 1px solid #181825;
+  color: rgba(140, 175, 195, 0.65);
 }
+
+/* ── Tray ───────────────────────────────────────── */
 
 #tray {
-  border-radius: 10px;
-  margin-right: 10px;
+  margin-right: 4px;
 }
 
-#workspaces {
-  border-radius: 10px;
-  margin-left: 10px;
-  padding-left: 5px;
-  padding-right: 0;
-}
+/* ── Updates ────────────────────────────────────── */
 
 #custom-updates {
-  color: #f5c2e7;
-  border-radius: 10px 0 0 10px;
-  border-left: 0;
-  border-right: 0;
+  margin-left: 8px;
 }
 
-#language {
-  color: #f38ba8;
-  border-left: 0;
-  border-right: 0;
+/* ── Audio ───────────────────────────────────────── */
+
+#pulseaudio.muted {
+  color: rgba(140, 175, 195, 0.35);
 }
 
-#window {
-  border-radius: 10px;
-  margin-left: 30px;
-  margin-right: 30px;
-  padding-left: 12px;
-  padding-right: 12px;
-}
-
-#pulseaudio {
-  color: #a6adc8;
-  border-left: 0;
-  border-right: 0;
-}
-
-#pulseaudio.microphone {
-  color: #cba6f7;
-  border-radius: 0 10px 10px 0;
-  border-left: 0;
-  border-right: 0;
-  margin-right: 5px;
-}
-
-/* Battery */
-#custom-battery {
-  color: #a6adc8;
-  border-left: 0;
-  border-right: 0;
-}
+/* ── Battery ─────────────────────────────────────── */
 
 #custom-battery.charging {
-  color: #a6adc8;
-}
-
-#custom-battery.discharging {
-  color: #a6adc8;
+  color: rgba(122, 163, 104, 0.75);
 }
 
 @keyframes blink {
-  50% { opacity: 0.4; }
+  50% { opacity: 0.3; }
 }
 
-/* Network toggle */
-#custom-network-toggle {
-  color: #a6adc8;
-  border-left: 0;
-  border-right: 0;
-}
+/* ── Clock — slightly brighter so time is always readable ── */
 
-/* Power profile */
-#custom-power-profile {
-  color: #a6adc8;
-  border-left: 0;
-  border-right: 0;
-}
-
-/* Clock */
 #clock {
-  color: #a6adc8;
-  border-radius: 0 10px 10px 0;
-  margin-left: 0;
+  color: rgba(200, 216, 228, 0.85);
   margin-right: 10px;
-  border-left: 0;
 }
